@@ -9,7 +9,10 @@
 import UIKit
 
 class AccountTableViewController: UITableViewController {
-
+    var tableData: Array<String>?
+    var priceData: Array<String>?
+    var subjData: Array<String>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,25 @@ class AccountTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        priceData = [
+            "569,99 €",
+            "729,90 €",
+            "549,95 €",
+            "1499,95 €"
+        ]
+        
+        subjData = [
+            "Amazon ID 242342341",
+            "Apple Store Hamburg",
+            "Apple Store Hamburg",
+            "E-Bites Unlimited"
+        ]
+        
+        self.tableView.tableFooterView = UIView()
+        self.tableView.reloadData()
+        
+        IBMWatson.sharedInstance.say(withText: "Your transaction overview about your luxury expenses is 3,245 € over the last 6 months")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +51,22 @@ class AccountTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // #warning Incomplete implementation, return the number of rows#
+        print("number of rows: \(subjData?.count)")
+        return (subjData?.count)!
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell
+        
+        cell.textLabel?.text = subjData?[indexPath.row]
+        cell.detailTextLabel?.text = priceData?[indexPath.row]
+        
+        return cell
     }
 
     /*

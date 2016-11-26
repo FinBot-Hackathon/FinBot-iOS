@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF31C06B1DEA407F00B13E0D /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31C06A1DEA407F00B13E0D /* TransactionViewController.swift */; };
+		DF31C06D1DEA4A2000B13E0D /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF31C06C1DEA4A2000B13E0D /* AnalyticsViewController.swift */; };
+		DF3329461DEA273700D5DE8D /* IBMWatson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3329451DEA273700D5DE8D /* IBMWatson.swift */; };
+		DF3329481DEA386400D5DE8D /* PlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3329471DEA386400D5DE8D /* PlanningViewController.swift */; };
+		DF33294A1DEA38AF00D5DE8D /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3329491DEA38AF00D5DE8D /* RecommendationViewController.swift */; };
+		DF33294C1DEA392600D5DE8D /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF33294B1DEA392600D5DE8D /* QueryViewController.swift */; };
 		DF9F9B421DE8E3840040D697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9B411DE8E3840040D697 /* AppDelegate.swift */; };
 		DF9F9B441DE8E3840040D697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9B431DE8E3840040D697 /* ViewController.swift */; };
 		DF9F9B471DE8E3840040D697 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF9F9B451DE8E3840040D697 /* Main.storyboard */; };
@@ -80,6 +86,7 @@
 		DFBD72111DE9EAE8007636B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBD72101DE9EAE8007636B5 /* Alamofire.framework */; };
 		DFBD72121DE9EAF1007636B5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBD72101DE9EAE8007636B5 /* Alamofire.framework */; };
 		DFBD72131DE9EAF1007636B5 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DFBD72101DE9EAE8007636B5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DFBD72161DEA04FE007636B5 /* String+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBD72151DEA04FE007636B5 /* String+Index.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +126,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF31C06A1DEA407F00B13E0D /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		DF31C06C1DEA4A2000B13E0D /* AnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		DF3329451DEA273700D5DE8D /* IBMWatson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBMWatson.swift; sourceTree = "<group>"; };
+		DF3329471DEA386400D5DE8D /* PlanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningViewController.swift; sourceTree = "<group>"; };
+		DF3329491DEA38AF00D5DE8D /* RecommendationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		DF33294B1DEA392600D5DE8D /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		DF9F9B3E1DE8E3840040D697 /* FinBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9F9B411DE8E3840040D697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF9F9B431DE8E3840040D697 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +161,7 @@
 		DFBD720A1DE9A5A3007636B5 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		DFBD720E1DE9E033007636B5 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		DFBD72101DE9EAE8007636B5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		DFBD72151DEA04FE007636B5 /* String+Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Index.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +219,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF3329441DEA272000D5DE8D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DF3329451DEA273700D5DE8D /* IBMWatson.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		DF9F9B351DE8E3840040D697 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +246,8 @@
 		DF9F9B401DE8E3840040D697 /* FinBot */ = {
 			isa = PBXGroup;
 			children = (
+				DF3329441DEA272000D5DE8D /* Utility */,
+				DFBD72141DEA04CE007636B5 /* Category */,
 				DFBD72081DE9A57C007636B5 /* SDK */,
 				DF9F9B411DE8E3840040D697 /* AppDelegate.swift */,
 				DF9F9B431DE8E3840040D697 /* ViewController.swift */,
@@ -232,6 +256,11 @@
 				DF9F9B4A1DE8E3840040D697 /* LaunchScreen.storyboard */,
 				DF9F9B4D1DE8E3840040D697 /* Info.plist */,
 				DFBD720E1DE9E033007636B5 /* AccountTableViewController.swift */,
+				DF3329471DEA386400D5DE8D /* PlanningViewController.swift */,
+				DF3329491DEA38AF00D5DE8D /* RecommendationViewController.swift */,
+				DF33294B1DEA392600D5DE8D /* QueryViewController.swift */,
+				DF31C06A1DEA407F00B13E0D /* TransactionViewController.swift */,
+				DF31C06C1DEA4A2000B13E0D /* AnalyticsViewController.swift */,
 			);
 			path = FinBot;
 			sourceTree = "<group>";
@@ -278,6 +307,14 @@
 				DFBD720A1DE9A5A3007636B5 /* SwiftyJSON.framework */,
 			);
 			name = SwiftyJson;
+			sourceTree = "<group>";
+		};
+		DFBD72141DEA04CE007636B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DFBD72151DEA04FE007636B5 /* String+Index.swift */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,8 +392,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9F9B441DE8E3840040D697 /* ViewController.swift in Sources */,
+				DF33294C1DEA392600D5DE8D /* QueryViewController.swift in Sources */,
+				DF33294A1DEA38AF00D5DE8D /* RecommendationViewController.swift in Sources */,
+				DF3329461DEA273700D5DE8D /* IBMWatson.swift in Sources */,
+				DF31C06B1DEA407F00B13E0D /* TransactionViewController.swift in Sources */,
 				DF9F9B421DE8E3840040D697 /* AppDelegate.swift in Sources */,
+				DF3329481DEA386400D5DE8D /* PlanningViewController.swift in Sources */,
+				DF31C06D1DEA4A2000B13E0D /* AnalyticsViewController.swift in Sources */,
 				DFBD720F1DE9E033007636B5 /* AccountTableViewController.swift in Sources */,
+				DFBD72161DEA04FE007636B5 /* String+Index.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import TextToSpeechV1
 import AVFoundation
 import SpeechToTextV1
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     var audioPlayer = AVAudioPlayer() // see note below
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     var timeStart: Date?
     var sayText: String?
     var oldSayText: String?
+    var overloadString: String?
     
     func startStreaming() {
         let username = "5bba6dc9-5a75-4038-944e-aaf16bb83aff"
@@ -32,9 +34,13 @@ class ViewController: UIViewController {
             print(results.bestTranscript)
             self.sayText = results.bestTranscript
             
-            if( results.bestTranscript.range(of: "Hey") != nil){
-                print("Found hey")
+            if( results.bestTranscript.range(of: "Kim") != nil){
+                speechToText.stopRecognizeMicrophone()
                 self.timeStart = Date()
+                self.overloadString = self.sayText
+                
+                speechToText.stopRecognizeMicrophone()
+                IBMWatson.sharedInstance.say(withText: "I made a transaction of 200 Euros to Kim")
             }
         }
     }
@@ -42,26 +48,33 @@ class ViewController: UIViewController {
     func stopStreaming() {
         speechToText?.stopRecognizeMicrophone()
     }
-
-    func generateSpeech(){
-        let textToSpeach = TextToSpeech(username: "c08db1f9-8f05-4cb4-b9e4-db06031e45de", password: "GwkcLsnaRA0k")
-        textToSpeach.serviceURL = "https://stream.watsonplatform.net/text-to-speech/api"
+    
+    func makeTransaction(){
         
-        let text = "Welcome to FinBot. You have spend 145 Euros on Coffee this week"
-        let failure = { (error: Error) in print(error) }
-        textToSpeach.synthesize(text, failure: failure) { data in
-            self.audioPlayer = try! AVAudioPlayer(data: data)
-            self.audioPlayer.prepareToPlay()
-            self.audioPlayer.play()
-        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
-        startStreaming()
-        _ = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true);
+        //startStreaming()
+        //_ = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.update), userInfo: nil, repeats: true);
+        
+        let watsonURL = "http://finbot-001.eu-gb.mybluemix.net/conversation?question=transfer%20200%20Euro%20%20to%20kim"
+        Alamofire.request(watsonURL).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                //print("JSON: \(json)")
+                
+                print(json["output"]["text"][0])
+                let text = json["output"]["text"][0].string
+                //IBMWatson.sharedInstance.say(withText: text!)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // must be internal or public.
@@ -82,10 +95,14 @@ class ViewController: UIViewController {
                 self.speechToText?.stopRecognizeMicrophone()
                 print("Stopping: \(self.sayText)")
                 
-                let watsonURL = "http://finbot-001.eu-gb.mybluemix.net/text_in?payload="+self.sayText!.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
-                Alamofire.request(watsonURL).response { response in
+                let sendString = sayText!.replacingOccurrences(of: self.overloadString!, with: "")
+                print("Removing: \(self.overloadString)")
+                print("Sending actually: \(sendString)")
+                
+                let watsonURL = "http://finbot-001.eu-gb.mybluemix.net/text_in?payload="+sendString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+                /*Alamofire.request(watsonURL).response { response in
                     print(response)  // original URL request
-                }
+                }*/
                 
                 self.sayText = nil
                 self.oldSayText = nil;

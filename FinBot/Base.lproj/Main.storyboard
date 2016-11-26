@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0g-9Y-Jk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="36"/>
+            <point key="canvasLocation" x="-636" y="36"/>
         </scene>
         <!--Fin-Bot-->
         <scene sceneID="tne-QT-ifu">
@@ -107,21 +107,37 @@
             </objects>
             <point key="canvasLocation" x="509.60000000000002" y="35.532233883058474"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Account Table View Controller-->
         <scene sceneID="h8j-Oh-hMn">
             <objects>
-                <tableViewController id="4zm-bk-47o" sceneMemberID="viewController">
+                <tableViewController id="4zm-bk-47o" customClass="AccountTableViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="t23-KH-tDE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aKH-Hd-rDk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Wom-1I-BTd" detailTextLabel="5fI-Z9-dcc" style="IBUITableViewCellStyleValue1" id="aKH-Hd-rDk">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aKH-Hd-rDk" id="q22-U2-CfE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wom-1I-BTd">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5fI-Z9-dcc">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -154,9 +170,6 @@
                                     <constraint firstAttribute="width" constant="194" id="cPC-Lf-YyA"/>
                                 </constraints>
                                 <state key="normal" title="Show All"/>
-                                <connections>
-                                    <segue destination="4zm-bk-47o" kind="show" id="EqS-v4-cKQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrB-4t-bVC">
                                 <rect key="frame" x="187" y="362" width="188" height="305"/>
@@ -172,6 +185,9 @@
                                 <state key="normal" title="Filter transaction Type">
                                     <color key="titleColor" red="0.97905759160000005" green="0.97905759160000005" blue="0.97905759160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4zm-bk-47o" kind="show" id="Hk4-84-Jri"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -194,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="-1103.2" y="-690.40479760119945"/>
         </scene>
-        <!--View Controller-->
+        <!--Transaction View Controller-->
         <scene sceneID="7sX-AM-S1E">
             <objects>
-                <viewController id="ELf-jf-bhY" customClass="ViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ELf-jf-bhY" customClass="TransactionViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sm6-xE-Ut6"/>
                         <viewControllerLayoutGuide type="bottom" id="3ed-hY-UIN"/>
@@ -261,10 +277,10 @@
             </objects>
             <point key="canvasLocation" x="1269.5999999999999" y="-690.40479760119945"/>
         </scene>
-        <!--View Controller-->
+        <!--Recommendation View Controller-->
         <scene sceneID="J0I-yf-Arw">
             <objects>
-                <viewController id="2mW-jI-78p" customClass="ViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2mW-jI-78p" customClass="RecommendationViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G8q-Ok-Jmk"/>
                         <viewControllerLayoutGuide type="bottom" id="3gF-bE-3pk"/>
@@ -290,6 +306,9 @@
                                 <state key="normal" title="Predict behavior">
                                     <color key="titleColor" red="0.97905759160000005" green="0.97905759160000005" blue="0.97905759160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Cmo-Lc-Pp8" kind="show" id="kdo-4f-IHq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -308,10 +327,65 @@
             </objects>
             <point key="canvasLocation" x="1269.5999999999999" y="824.43778110944538"/>
         </scene>
-        <!--View Controller-->
+        <!--Analytics View Controller-->
+        <scene sceneID="mkO-HV-V1C">
+            <objects>
+                <viewController id="Cmo-Lc-Pp8" customClass="AnalyticsViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PRL-ic-eU6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJV-UP-V3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a9g-oU-xVv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Analytics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-W6-7BK">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expenditures over the last 6 months" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znh-AD-XrK">
+                                <rect key="frame" x="16" y="154" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3000 Euro for luxurious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kp-Bk-cKf">
+                                <rect key="frame" x="16" y="183" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High regular transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-ce-rvg">
+                                <rect key="frame" x="16" y="212" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tendency to take risks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-NA-YuI">
+                                <rect key="frame" x="16" y="241" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iY8-PF-Y61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2149.5999999999999" y="823.53823088455783"/>
+        </scene>
+        <!--Planning View Controller-->
         <scene sceneID="lqb-hI-x4F">
             <objects>
-                <viewController id="3HO-o7-nCx" customClass="ViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3HO-o7-nCx" customClass="PlanningViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gXV-mE-U0E"/>
                         <viewControllerLayoutGuide type="bottom" id="KE9-fJ-MCw"/>
@@ -321,22 +395,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7L-8V-NYs">
-                                <rect key="frame" x="0.0" y="64" width="188" height="299"/>
+                                <rect key="frame" x="0.0" y="64" width="189" height="299"/>
                                 <color key="backgroundColor" red="1" green="0.4887863248" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Plan investment"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lj2-bF-Qq1">
-                                <rect key="frame" x="1" y="363" width="187" height="304"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.01765681383" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="187" id="xcH-yz-sQS"/>
+                                    <constraint firstAttribute="width" constant="189" id="Cjv-hy-Koe"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijZ-s9-sE2">
-                                <rect key="frame" x="187" y="363" width="188" height="304"/>
-                                <color key="backgroundColor" red="0.93441106799999996" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Plan investment"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-2u-x4S">
                                 <rect key="frame" x="187" y="62" width="188" height="301"/>
@@ -347,26 +411,19 @@
                                 <state key="normal" title="Query expense possibility">
                                     <color key="titleColor" red="0.97905759160000005" green="0.97905759160000005" blue="0.97905759160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="NJc-UU-pWb" kind="show" id="Hxk-z7-WJx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="L9x-2u-x4S" firstAttribute="top" secondItem="gXV-mE-U0E" secondAttribute="bottom" constant="-2" id="4HN-bG-hgo"/>
-                            <constraint firstItem="ijZ-s9-sE2" firstAttribute="baseline" secondItem="Lj2-bF-Qq1" secondAttribute="firstBaseline" id="7w4-Pk-LMV"/>
                             <constraint firstAttribute="trailing" secondItem="L9x-2u-x4S" secondAttribute="trailing" id="Cn1-SE-zG9"/>
-                            <constraint firstItem="F7L-8V-NYs" firstAttribute="centerX" secondItem="Lj2-bF-Qq1" secondAttribute="centerX" id="Knx-Pp-NdB"/>
                             <constraint firstItem="F7L-8V-NYs" firstAttribute="baseline" secondItem="L9x-2u-x4S" secondAttribute="firstBaseline" constant="1" id="QGk-JH-FHb"/>
-                            <constraint firstItem="ijZ-s9-sE2" firstAttribute="top" secondItem="L9x-2u-x4S" secondAttribute="bottom" id="R0Q-rC-iti"/>
                             <constraint firstItem="KE9-fJ-MCw" firstAttribute="top" secondItem="F7L-8V-NYs" secondAttribute="bottom" constant="304" id="S11-wy-oke"/>
                             <constraint firstItem="F7L-8V-NYs" firstAttribute="top" secondItem="L9x-2u-x4S" secondAttribute="top" constant="2" id="Swy-n3-ldU"/>
-                            <constraint firstItem="Lj2-bF-Qq1" firstAttribute="centerY" secondItem="ijZ-s9-sE2" secondAttribute="centerY" id="fAf-7a-nm5"/>
-                            <constraint firstItem="L9x-2u-x4S" firstAttribute="leading" secondItem="ijZ-s9-sE2" secondAttribute="leading" id="l8P-gX-DQZ"/>
-                            <constraint firstItem="F7L-8V-NYs" firstAttribute="trailing" secondItem="Lj2-bF-Qq1" secondAttribute="trailing" id="oIP-RC-FMx"/>
-                            <constraint firstItem="ijZ-s9-sE2" firstAttribute="bottom" secondItem="KE9-fJ-MCw" secondAttribute="top" id="pgr-yX-BMi"/>
-                            <constraint firstItem="Lj2-bF-Qq1" firstAttribute="bottom" secondItem="KE9-fJ-MCw" secondAttribute="top" id="rdc-2h-Lcf"/>
-                            <constraint firstItem="Lj2-bF-Qq1" firstAttribute="baseline" secondItem="ijZ-s9-sE2" secondAttribute="firstBaseline" id="w3h-31-cgc"/>
                             <constraint firstItem="L9x-2u-x4S" firstAttribute="baseline" secondItem="F7L-8V-NYs" secondAttribute="firstBaseline" constant="-1" id="wgd-y2-D5w"/>
-                            <constraint firstItem="L9x-2u-x4S" firstAttribute="trailing" secondItem="ijZ-s9-sE2" secondAttribute="trailing" id="xuV-xB-dqs"/>
                             <constraint firstItem="F7L-8V-NYs" firstAttribute="leading" secondItem="JZk-B3-WZp" secondAttribute="leading" id="xyb-NA-Ub3"/>
                         </constraints>
                     </view>
@@ -374,6 +431,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40w-8u-G00" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1103.2" y="824.43778110944538"/>
+        </scene>
+        <!--Query View Controller-->
+        <scene sceneID="4qw-tA-uyM">
+            <objects>
+                <viewController id="NJc-UU-pWb" customClass="QueryViewController" customModule="FinBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jZH-nl-XML"/>
+                        <viewControllerLayoutGuide type="bottom" id="h2A-V6-r7c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZdE-1V-qZ9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gub-Fa-wsX">
+                                <rect key="frame" x="155" y="291" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Query"/>
+                                <connections>
+                                    <action selector="queryTouched:" destination="NJc-UU-pWb" eventType="touchUpInside" id="GW5-0Q-Vbh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dz8-d9-0s3">
+                                <rect key="frame" x="16" y="253" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKE-hR-xMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="823.53823088455783"/>
         </scene>
     </scenes>
 </document>
